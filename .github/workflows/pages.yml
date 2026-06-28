@@ -1,19 +1,53 @@
-name: Deploy MkDocs to GitHub Pages on:
+name: Deploy MkDocs to GitHub Pages
+
+on:
   push:
     branches:
-      - main permissions:
-  contents: read pages: write id-token: write concurrency: group: pages cancel-in-progress: false jobs: 
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
   deploy:
+    runs-on: ubuntu-latest
+
     environment:
-      name: github-pages url: ${{ "{{ steps.deployment.outputs.page_url }}" }}
-    runs-on: ubuntu-latest steps:
-      - uses: actions/checkout@v4 - uses: actions/setup-python@v5
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -r requirements.txt - run: mkdocs build --strict - uses: 
-      actions/configure-pages@v5 - uses: actions/upload-pages-artifact@v3
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build documentation
+        run: |
+          mkdocs build
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: site
-      - id: deployment
-        uses: actions/deploy-pages@v4
 
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
