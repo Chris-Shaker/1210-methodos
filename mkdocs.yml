@@ -1,31 +1,86 @@
-site_name: 1210 MethodOS
-site_description: Enterprise Domain Specification for Hospitality Engineering
+site_name: 1210 MethodOS™
+site_description: Enterprise Domain Specification for Hospitality Engineering, Consulting, Knowledge Architecture and AI-native Operations.
+site_author: 1210 AG
+repo_name: Chris-Shaker/1210-methodos
+repo_url: https://github.com/Chris-Shaker/1210-methodos
+edit_uri: edit/main/
+
 theme:
   name: material
+  language: de
+  logo: assets/images/logo-placeholder.svg
+  favicon: assets/images/favicon-placeholder.svg
+  palette:
+    - scheme: slate
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Light Mode
+    - scheme: default
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Dark Mode
   features:
+    - navigation.tabs
     - navigation.sections
     - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
     - search.highlight
     - content.code.copy
+    - content.action.edit
+
 plugins:
   - search
+
 markdown_extensions:
   - admonition
+  - attr_list
+  - md_in_html
   - tables
-  - fenced_code
+  - footnotes
+  - def_list
   - toc:
       permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Chris-Shaker/1210-methodos
+
 nav:
-  - Home: README.md
-  - Foundation: docs/foundation/
-  - Constitution: docs/constitution/
-  - Architecture: docs/architecture/
-  - Core: docs/core/
-  - Services: docs/services/
-  - Capabilities: docs/capabilities/
+  - Start: index.md
+  - Foundation: foundation/
+  - Constitution: constitution/
+  - Architecture: architecture/
+  - Core: core/
+  - Services: services/
+  - Capabilities: capabilities/
   - Objects:
-      - Core: docs/objects/core/
-      - Hospitality: docs/objects/hospitality/
-      - Beverage: docs/objects/beverage/
-      - Business: docs/objects/business/
-      - Knowledge: docs/objects/knowledge/
+      - Core Objects: objects/core/
+      - Hospitality Objects: objects/hospitality/
+      - Beverage Objects: objects/beverage/
+      - Business Objects: objects/business/
+      - Knowledge Objects: objects/knowledge/

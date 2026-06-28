@@ -1,4 +1,5 @@
-mkdocs-material
 mkdocs
-jsonschema
+mkdocs-material
+pymdown-extensions
 pyyaml
+jsonschema
