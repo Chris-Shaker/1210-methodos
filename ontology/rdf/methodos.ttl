@@ -1,0 +1,5 @@
+@prefix methodos: <https://1210-methodos.org/ontology#> .
+
+methodos:Object a methodos:Class .
+methodos:Capability a methodos:Class .
+methodos:Service a methodos:Class .

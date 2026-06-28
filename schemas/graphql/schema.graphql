@@ -1,0 +1,7 @@
+type MethodOSObject {
+  object_id: ID!
+  name: String!
+  object_type: String!
+  status: String!
+  version: String!
+}

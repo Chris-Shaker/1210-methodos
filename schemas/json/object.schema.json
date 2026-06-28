@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MethodOS Object",
+  "type": "object",
+  "required": ["object_id", "name", "status", "version"],
+  "properties": {
+    "object_id": {"type": "string"},
+    "name": {"type": "string"},
+    "status": {"type": "string"},
+    "version": {"type": "string"}
+  }
+}

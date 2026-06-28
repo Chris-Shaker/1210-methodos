@@ -1,0 +1,31 @@
+site_name: 1210 MethodOS
+site_description: Enterprise Domain Specification for Hospitality Engineering
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.expand
+    - search.highlight
+    - content.code.copy
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - tables
+  - fenced_code
+  - toc:
+      permalink: true
+nav:
+  - Home: README.md
+  - Foundation: docs/foundation/
+  - Constitution: docs/constitution/
+  - Architecture: docs/architecture/
+  - Core: docs/core/
+  - Services: docs/services/
+  - Capabilities: docs/capabilities/
+  - Objects:
+      - Core: docs/objects/core/
+      - Hospitality: docs/objects/hospitality/
+      - Beverage: docs/objects/beverage/
+      - Business: docs/objects/business/
+      - Knowledge: docs/objects/knowledge/

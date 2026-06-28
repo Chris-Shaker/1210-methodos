@@ -1,0 +1,8 @@
+{
+  "name": "1210 MethodOS",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+  "postCreateCommand": "pip install -r requirements.txt"
+}

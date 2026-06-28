@@ -1,0 +1,12 @@
+{
+  "name": "1210-methodos",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "lint:md": "markdownlint '**/*.md'",
+    "docs": "mkdocs serve"
+  },
+  "devDependencies": {
+    "markdownlint-cli": "^0.41.0"
+  }
+}

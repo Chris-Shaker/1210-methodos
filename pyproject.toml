@@ -1,0 +1,8 @@
+[project]
+name = "1210-methodos"
+version = "1.1.0"
+description = "Enterprise Domain Specification for Hospitality Engineering"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 100
